@@ -1,13 +1,13 @@
 :root {
   --red: #C8290A;
   --yellow: #FFCB05;
-  --ink: #1B1F2A;    
-  --muted: #4A5368;  
-  --bg: #F4F6FA;      
-  --line: #C9D0DC;    
+  --ink: #1B1F2A;
+  --muted: #4A5368;
+  --bg: #F4F6FA;
+  --line: #C9D0DC;
 }
 
-* { box-sizing: border-box; } 
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -32,7 +32,7 @@ header {
   margin: 0 auto;
   padding: 16px 24px;
   display: flex;
-  flex-wrap: wrap;         
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
@@ -111,13 +111,35 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
+
+#ball3d {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .img-box img {
+  position: relative;
+  z-index: 1;
   max-width: 100%;
   max-height: 420px;
   object-fit: contain;
+  pointer-events: none;
+  filter: drop-shadow(0 12px 18px rgba(27, 31, 42, .25));
 }
 
+.img-box img.pop { animation: pop .6s ease-out; }
+@keyframes pop {
+  from { transform: scale(.4); opacity: 0; }
+  to   { transform: scale(1);  opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .img-box img.pop { animation: none; }
+}
 
 .info {
   flex: 1 1 420px;
@@ -131,7 +153,7 @@ main {
 h1 {
   font-size: 44px;
   line-height: 1.1;
-  text-transform: capitalize;   /* primera letra en mayúscula */
+  text-transform: capitalize;
 }
 
 .types { display: flex; gap: 8px; margin-top: 8px; }
@@ -144,8 +166,7 @@ h1 {
   font-size: 14px;
   font-weight: 600;
 }
-.chip:nth-child(2) { background: var(--yellow); color: var(--ink); }  /* segundo tipo */
-
+.chip:nth-child(2) { background: var(--yellow); color: var(--ink); }
 
 .facts { display: flex; flex-wrap: wrap; gap: 16px; }
 
@@ -161,7 +182,6 @@ h1 {
 .fact small { font-size: 13px; color: var(--muted); }
 .fact b { font-size: 18px; text-transform: capitalize; }
 
-
 .stats { display: flex; flex-direction: column; gap: 12px; }
 
 .stat {
@@ -171,23 +191,22 @@ h1 {
   font-size: 14px;
   margin-bottom: 12px;
 }
-.stat span { width: 110px; }        
-.stat b    { width: 32px; text-align: right; } 
+.stat span { width: 110px; }
+.stat b    { width: 32px; text-align: right; }
 
-.track {                           
+.track {
   flex: 1;
   height: 10px;
   border-radius: 5px;
   background: #E3E8F1;
 }
-.fill {                           
-  width: 0;                          
+.fill {
+  width: 0;
   height: 10px;
   border-radius: 5px;
   background: var(--red);
-  transition: width .5s;              
+  transition: width .5s;
 }
-
 
 .evo { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 16px; }
 
@@ -206,13 +225,13 @@ h1 {
   gap: 4px;
 }
 .evo button:hover,
-.evo button.on { border-color: var(--red); }   /* el Pokémon actual */
+.evo button.on { border-color: var(--red); }
 
 .evo img { width: 96px; height: 96px; object-fit: contain; }
 .evo small { font-size: 14px; color: var(--muted); }
 
 #msg {
-  display: none;             
+  display: none;
   padding: 14px 18px;
   border-radius: 12px;
   background: #FDECEA;
