@@ -5,14 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pokédex</title>
 
-
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap">
-
 
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
 
   <header>
     <div class="bar">
@@ -36,20 +33,17 @@
 
     <div id="msg" role="alert"></div>
 
-    <!-- Botones anterior / siguiente -->
     <div class="nav">
       <button class="btn-white" id="prev">← Anterior</button>
       <button class="btn-white" id="next">Siguiente →</button>
     </div>
 
-
     <section class="card main">
 
-
       <div class="img-box">
+        <canvas id="ball3d" aria-hidden="true"></canvas>
         <img id="art" alt="" hidden>
       </div>
-
 
       <div class="info">
         <div>
@@ -71,14 +65,15 @@
       </div>
     </section>
 
-
     <section class="card">
       <h2>Línea evolutiva</h2>
       <div class="evo" id="evo"></div>
     </section>
   </main>
 
-
   <script src="script.js"></script>
+
+  <script src="three.min.js"></script>
+  <script src="three.js"></script>
 </body>
 </html>
