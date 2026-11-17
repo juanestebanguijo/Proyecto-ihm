@@ -78,6 +78,8 @@ Posibles mejoras
 - Descripción del Pokémon (campo `flavor_text_entries` de la especie).
 - Modo oscuro.
 
+Figma: https://www.figma.com/design/cAvh4wOYsbTOyWzsH1v4wx/Sin-t%C3%ADtulo?node-id=0-1&t=Y4HunVH2DYZuxp6h-1
+
 Créditos
 
 - Datos e imágenes: [PokeAPI](https://pokeapi.co/).
